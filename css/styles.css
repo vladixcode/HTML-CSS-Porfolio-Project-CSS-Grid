@@ -47,6 +47,7 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --navbar-height: 5rem;
+  --footer-height: 13rem;
 }
 /*
 =============== 
@@ -820,6 +821,7 @@ Footer
   background: #222;
   display: grid;
   place-items: center;
+  height: var(--footer-height);
 }
 .footer .social-icons {
   margin-bottom: 2rem;
@@ -839,6 +841,21 @@ Footer
 Single Page
 ===============
 */
+.single-page {
+  background: var(--clr-primary-10);
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+}
+.page-info {
+  max-width: 700px;
+}
+.page-info a {
+  text-transform: uppercase;
+  color: var(--clr-primary-5);
+  transition: var(--transition);
+}
+.page-info a:hover {
+  color: var(--clr-primary-1);
+}
 
 /*
 =============== 
