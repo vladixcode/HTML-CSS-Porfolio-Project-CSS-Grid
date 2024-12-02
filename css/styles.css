@@ -670,7 +670,76 @@ Skills
 Timeline
 ===============
 */
-
+.timeline-center {
+  width: 80%;
+  max-width: 40rem;
+}
+.timeline-item {
+  margin: 0;
+  padding: 4rem 2rem;
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  border: 5px double var(--clr-primary-5);
+  width: 50%;
+  box-sizing: content-box;
+}
+.timeline p {
+  margin-bottom: 0;
+}
+/* Setting the border of left, top, bottom */
+.timeline-item:nth-child(even)::before {
+  left: -2.5px;
+  top: -2.5px;
+  bottom: -2.5px;
+  border-right-width: 0;
+  border-radius: 2rem 0 0 2rem;
+}
+/* Setting the border of right, top, bottom */
+.timeline-item:nth-child(odd)::before {
+  right: -2.5px;
+  top: -2.5px;
+  bottom: -2.5px;
+  border-left-width: 0;
+  border-radius: 0 50px 50px 0;
+}
+.timeline-item:first-child::before {
+  top: 50%;
+  border-top: 0;
+  border-top-right-radius: 0;
+}
+.timeline-item:last-child::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+.timeline-item:nth-child(even) {
+  padding-right: 2rem;
+}
+.timeline-item:nth-child(odd) {
+  padding-left: 2rem;
+}
+.number {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 0;
+  background: var(--clr-primary-5);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--clr-primary-1);
+  font-weight: bold;
+}
+.timeline-item:nth-child(even) .number {
+  left: 0;
+}
+.timeline-item:nth-child(odd) .number {
+  left: 100%;
+}
 /*
 =============== 
 Blog
